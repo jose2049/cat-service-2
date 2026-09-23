@@ -1,4 +1,4 @@
-package com.example.catservice2;
+package repository;
 
 import com.example.catservice2.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

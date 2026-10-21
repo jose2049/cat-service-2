@@ -1,4 +1,9 @@
 package com.example.catservice2.DTO;
 
-public class CreateProductRequest {
-}
+import java.math.BigDecimal;
+
+public record CreateProductRequest(
+        String name,
+        BigDecimal price,
+        Long category_id
+) { }

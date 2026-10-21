@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.catservice2.repository.ProductRepository;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -30,5 +31,8 @@ public class ProductService {
     public Product getById(Long id) {
         return productRepository.findById(id).
                 orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+    }
+    public List<Product> getByMinimumPrice(BigDecimal minPrice) {
+        return productRepository.findByMinimumPrice(minPrice);
     }
 }

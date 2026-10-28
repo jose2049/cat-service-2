@@ -1,5 +1,6 @@
 package com.example.catservice2.controller;
 
+import com.example.catservice2.DTO.CreateProductRequest;
 import com.example.catservice2.model.Product;
 import com.example.catservice2.service.ProductService;
 import org.springframework.http.HttpStatus;
@@ -24,8 +25,8 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product product) {
-        return service.create(product);
+    public Product create(@RequestBody CreateProductRequest request) {
+        return service.create(request);
     }
 
     @GetMapping("/{id}")

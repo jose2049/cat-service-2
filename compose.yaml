@@ -1,0 +1,13 @@
+services:
+  catalog:
+    image: cat-service-2:lab7
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:h2:file:./data/catalogdb"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    volumes:
+      - catalog_data:/app/data
+
+volumes:
+  catalog_data:
